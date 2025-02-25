@@ -1,0 +1,85 @@
+{
+  "name": "file-tree-generator",
+  "displayName": "File Tree Generator",
+  "icon": "media/hub-icon.png",
+  "description": "Generate file tree based on selected files and folders.",
+  "publisher": "husaria",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "filetreegenerator-sidebar-view",
+          "title": "File Tree Generator",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "filetreegenerator-sidebar-view": [
+        {
+          "type": "webview",
+          "id": "filetreegenerator-sidebar",
+          "name": "File Tree Generator",
+          "icon": "media/icon.svg",
+          "contextualTitle": "File Tree Generator"
+        }
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/assertjohn/file-tree-generator"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "concurrently \"npm run svelte-compile\" \"npm run watch:esbuild\" \"npm run watch:tsc\"",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test",
+    "svelte-compile": "rollup -c -w"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@tsconfig/svelte": "^5.0.4",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.90.0",
+    "@typescript-eslint/eslint-plugin": "^8.22.0",
+    "@typescript-eslint/parser": "^8.22.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "concurrently": "^9.1.2",
+    "esbuild": "^0.24.2",
+    "eslint": "^9.19.0",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^4.5.2",
+    "rollup-plugin-svelte": "^6.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "svelte": "^4.2.12",
+    "svelte-check": "^4.1.4",
+    "svelte-preprocess": "^6.0.3",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@vscode/webview-ui-toolkit": "^1.4.0"
+  }
+}
