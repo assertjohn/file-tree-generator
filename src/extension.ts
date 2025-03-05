@@ -20,6 +20,14 @@ export function activate(context: vscode.ExtensionContext) {
 		)
 	);
 
+	// Register the command to show sidebar
+	let showSidebarCommand = vscode.commands.registerCommand('filetreegenerator.showSidebar', () => {
+		// Focus on the sidebar view
+		vscode.commands.executeCommand('workbench.view.extension.filetreegenerator-sidebar-view');
+	});
+
+	context.subscriptions.push(showSidebarCommand);
+
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json

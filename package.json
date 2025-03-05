@@ -1,10 +1,10 @@
 {
-  "name": "file-tree-generator",
-  "displayName": "File Tree Generator",
+  "name": "file-tree-composer",
+  "displayName": "File Tree Composer",
   "icon": "media/hub-icon.png",
   "description": "Generate file tree based on selected files and folders.",
   "publisher": "husaria",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.90.0"
   },
@@ -18,7 +18,7 @@
       "activitybar": [
         {
           "id": "filetreegenerator-sidebar-view",
-          "title": "File Tree Generator",
+          "title": "File Tree Composer",
           "icon": "media/icon.svg"
         }
       ]
@@ -28,12 +28,19 @@
         {
           "type": "webview",
           "id": "filetreegenerator-sidebar",
-          "name": "File Tree Generator",
+          "name": "File Tree Composer",
           "icon": "media/icon.svg",
-          "contextualTitle": "File Tree Generator"
+          "contextualTitle": "File Tree Composer"
         }
       ]
-    }
+    },
+    "commands": [
+      {
+        "command": "filetreegenerator.showSidebar",
+        "title": "Show File Tree Composer",
+        "category": "File Tree Composer"
+      }
+    ]
   },
   "repository": {
     "type": "git",

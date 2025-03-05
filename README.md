@@ -1,6 +1,6 @@
 # File Tree Export - README
 
-**File Tree Export** is a simple yet powerful VSCode extension that allows you to **generate an ASCII file tree** from your selected files and folders in your workspace. Instead of merging file contents into one long text block, the extension produces a clean, hierarchical diagram that clearly shows your project's structure in a format optimized for AI ingestion and easy sharing.
+**File Tree Export** is a simple yet powerful VSCode extension that allows you to **generate an ASCII file tree** from your selected files and folders in your workspace. The extension produces a clean, hierarchical diagram that clearly shows your project's structure in a format optimized for AI ingestion and easy sharing.
 
 ![Screenshot](./media/screenshot.png)
 
@@ -29,8 +29,8 @@ This extension does not introduce new settings.
 
 ### 0.0.1
 
-- **Enhanced UI:** Simplified interface for selecting files/folders and generating the file tree.
-- **Export Options:** Now supports copying the file tree to the clipboard and generating a new text file with the diagram.
+- **Easy UI:** Simple interface for selecting files/folders and generating the file tree.
+- **Export Options:** Supports copying the file tree to the clipboard and generating a new text file with the diagram.
 
 ---
 
